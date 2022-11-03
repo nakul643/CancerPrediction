@@ -1,0 +1,82 @@
+<html>
+<head>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<title>Cancer Prediction</title>
+</head>
+<body bgcolor="#ddeaed">
+<div align="center">
+<h1 align="center" >Cancer Prediction</h1>
+<div class="form">
+<form action="{{url_for('predict') }}" method="post">
+<table border="2">
+<tr>
+<td>radius_mean</td><td><input type="text" step="any" name="radius_mean" placeholder="radius_mean" required /></td>
+<td>texture_mean</td><td><input type="text"step="any" name="texture_mean" placeholder="texture_mean" required /></td>
+<td>perimeter_mean</td><td><input type="text" step="any"name="perimeter_mean" placeholder="perimeter_mean" required /></td>
+</tr>
+<tr>
+<td>area_mean</td><td><input type="text"step="any" name="area_mean" placeholder="area_mean" required /></td>
+<td>smoothness_mean</td><td><input type="text"step="any" name="smoothness_mean" placeholder="smoothness_mean" required /></td>
+<td>compactness_mean</td><td><input type="text"step="any" name="compactness_mean" placeholder="compactness_mean" required /></td>
+</tr>
+<tr>
+<td>concavity_mean</td><td><input type="text"step="any" name="concavity_mean" placeholder="concavity_mean" required /></td>
+<td>concave points_mean</td><td><input type="text" step="any" name="concave points_mean" placeholder="concave points_mean" required /></td>
+<td>symmetry_mean</td><td><input type="text" step="any" name="symmetry_mean" placeholder="symmetry_mean" required /></td>
+
+</tr>
+<tr>
+<td>fractal_dimension_mean</td><td><input type="text" step="any" name="fractal_dimension_mean" placeholder="fractal_dimension_mean" required /></td>
+<td>radius_se</td><td><input type="text" step="any" name="radius_se" placeholder="radius_se" required /></td>
+<td>texture_se</td><td><input type="text" step="any" name="texture_se" placeholder="texture_se" required /></td>
+
+</tr>
+<tr>
+<td>perimeter_se</td><td><input type="text" step="any" name="perimeter_se" placeholder="perimeter_se" required /></td>
+<td>area_se</td><td><input type="text" step="any" name="area_se" placeholder="area_se" required /></td>
+<td>smoothness_se</td><td><input type="text" step="any" name="smoothness_se" placeholder="smoothness_se" required /></td>
+
+</tr>
+<tr>
+<td>compactness_se</td><td><input type="text" step="any" name="compactness_se" placeholder="compactness_se" required /></td>
+<td>concavity_se</td><td><input type="text" step="any" name="concavity_se" placeholder="concavity_se" required /></td>
+<td>concave points_se</td><td><input type="text" step="any" name="concave points_se" placeholder="concave points_se" required /></td>
+
+</tr>
+<tr>
+<td>symmetry_se</td><td><input type="text" step="any" name="symmetry_se" placeholder="symmetry_se" required /></td>
+<td>fractal_dimension_se</td><td><input type="text" step="any" name="fractal_dimension_se" placeholder="fractal_dimension_se" required /></td>
+<td>radius_worst</td><td><input type="text" step="any" name="radius_worst" placeholder="radius_worst" required /></td>
+
+</tr>
+<tr>
+<td>texture_worst</td><td><input type="text" step="any" name="texture_worst" placeholder="texture_worst" required /></td>
+<td>perimeter_worst</td><td><input type="text" step="any" name="perimeter_worst" placeholder="perimeter_worst" required /></td>
+<td>area_worst</td><td><input type="text" step="any" name="area_worst" placeholder="area_worst" required /></td>
+
+</tr>
+<tr>
+<td>smoothness_worst</td><td><input type="text" step="any" name="smoothness_worst" placeholder="smoothness_worst" required /></td>
+<td>compactness_worst</td><td><input type="text" step="any" name="compactness_worst" placeholder="compactness_worst" required /></td>
+<td>concavity_worst</td><td><input type="text" step="any" name="concavity_worst" placeholder="concavity_worst" required /></td>
+
+</tr>
+<tr>
+<td>concave points_worst</td><td><input type="text" step="any" name="concave points_worst" placeholder="concave points_worst" required /></td>
+<td>symmetry_worst</td><td><input type="text" step="any" name="symmetry_worst" placeholder="symmetry_worst" required /></td>
+<td>fractal_dimension_worst</td><td><input type="text" step="any" name="fractal_dimension_worst" placeholder="fractal_dimension_worst" required /></td>
+
+</tr>
+
+</table>
+<br>
+<br>
+
+<button align="center" type="submit" >Submit Report</button>
+</form>
+<h1 text-style="bold" text-size="30pxs">Result:</h1>
+<h3 >{{ prediction_text }}</h3>
+</div>
+</div>
+</body>
+</html>
