@@ -24,5 +24,5 @@ def predict():
 
 if __name__ == "__main__":
     app.debug=True
-    app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+   
     app.run()
