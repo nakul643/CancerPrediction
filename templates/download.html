@@ -34,8 +34,8 @@
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
             <li class="bg-#fff text-primary"><h6>Predict Cancer</h6>
-<form action="/upload" method="post" enctype="multipart/form-data"><input type="file" id="uploadfile" name="file" required /><br><br>
-<button class="bg-info text-white" class="rounded" type="submit" id="upload" name="submit_btn">Upload Report</button>
+<form action="/upload" method="post" enctype="multipart/form-data"><input type="file" name="file" /><br><br>
+<button class="bg-info text-white" class="rounded" type="submit" onclick="hold"name="submit_btn">Upload Report</button>
 {{show_uploadstatus}}
 </form>
 </li>
@@ -43,32 +43,17 @@
         </li>
         
       </ul>
-      <form class="d-flex" role="upload" action="/upload" method="post" enctype="multipart/form-data">
-        <input class="form-control me-2" name="file" type="file" id="uploadfile" placeholder="submit report" aria-label="Report">
-        <button class="btn btn-warning me-5" id="upload" type="submit">Upload</button>
+      <form class="d-flex invisible" role="upload" action="/upload" method="post" enctype="multipart/form-data">
+        <input class="form-control me-2" name="file" type="file" placeholder="submit report" aria-label="Report">
+        <button class="btn btn-warning me-5" type="submit">Upload</button>
       </form>
-      <button class="btn btn-success invisible" type="submit">Download Result</button>
+      <form action="/download">
+      <button class="btn btn-success" type="submit">Download Result</button>
+    </form>
     </div>
   </div>
 </nav>
-<script>
-  function checkfile(){
-    var file=document.querySelector('#uploadfile').value
-    document.getElementById("upload").addEventListener("click",function(){
-      alert("please select a file to upload")
-      console.log(file)
-    })
-    
-  }
-      
-    
-    
-     
-  
-  
-    
-  
-</script>
+
 
 
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false" data-pause="false" data-interval="2000">
@@ -112,4 +97,3 @@
 
 </body>
 </html>
-
