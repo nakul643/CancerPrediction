@@ -7,13 +7,17 @@ from sklearn.preprocessing import StandardScaler
 ss=StandardScaler()
 data1= pd.read_csv("data1.csv")
 data2=pd.read_csv("data2.csv")
-
+data2.isna().sum()
+numeric = data2.select_dtypes(include=np.number)
+numeric_columns=numeric.columns
+data2[numeric_columns]=data2[numeric_columns].fillna(data2.mean)
 xtest1=data2.iloc[:,range(0,30)].values
+xtest1=ss.fit_transform(xtest1)
 
 data1.isna().sum()
 numeric = data1.select_dtypes(include=np.number)
 numeric_columns=numeric.columns
-data1[numeric_columns]=data1[numeric_columns].fillna(data1.mean);
+data1[numeric_columns]=data1[numeric_columns].fillna(data1.mean)
 #sns=boxplot(x=data1[''])
 x=data1.iloc[:,range(3,33)].values
 y=data1.iloc[:,2].values
@@ -45,7 +49,7 @@ input = np.asarray(input)
 model1.fit(xtrain,ytrain)
 print(model1.score(xtest,ytest))
 pickle.dump(model1, open("model.pkl", "wb"))
-yprediction =model1.predict(xtest)
+yprediction =model1.predict(xtest1)
 print(yprediction)
 #if(yprediction=="M"):
     #print("person is mignate")
